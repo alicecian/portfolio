@@ -3,10 +3,15 @@
 
 /* CUSTOM CSS */
 @font-face {
-  font-family: Standard;
-  src: url(standard_book-3.woff);
+  font-family: StandardBook;
+  src: url(fonts/standard-book-webfont.woff2);
+}
+
+@font-face {
+  font-family: StandardItalic;
+  src: url(fonts/standard-book-italic-webfont.woff2);
 }
 
 html {
-	font-family: Standard, Helvetica, Arial, sans-serif; 
+	font-family: StandardBook, Helvetica, Arial, sans-serif; 
 }
