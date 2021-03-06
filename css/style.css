@@ -1,11 +1,11 @@
-@import 'normalize.css';
+@import 'css/normalize.css';
 
 
 /* CUSTOM CSS */
 @font-face {
   font-family: 'Standard';
-	src: url('/fonts/standard-book-webfont.woff2') format('woff2'),
-       url('/fonts/standard-book-webfont.woff') format('woff');
+	src: url('fonts/standard-book-webfont.woff2') format('woff2'),
+       url('fonts/standard-book-webfont.woff') format('woff');
 }
 
 
