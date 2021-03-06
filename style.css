@@ -54,10 +54,10 @@ table {
 /* CUSTOM CSS */
 
 @font-face {
-  font-family: standard;
+  font-family: Standard;
   src: url(standard_book-3.woff);
 }
 
-html {
-	font-family: standard, Helvetica, Arial, sans-serif; 
+body {
+	font-family: Standard, Helvetica, Arial, sans-serif; 
 }
