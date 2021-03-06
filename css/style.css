@@ -10,23 +10,7 @@
 	font-weight: normal;
 }
 
-/*
-@font-face {
-    font-family: 'Standard';
-    src: url('../fonts/standard-book-webfont.eot'),
-    url('../fonts/standard-book-webfont.woff') format('woff'),
-    url('../fonts/standard-book-webfont.ttf')  format('truetype'),
-    url('../fonts/standard-book-webfont.woff2') format('woff2');
-    font-style: normal;
-  	font-weight: normal;
-  	font-variant: normal;
-	  text-transform: none;
-  	speak: none;
-	  line-height: 1;
-}
-*/
 
-
-body {
+html {
 	font-family: 'Standard', Helvetica, Arial, sans-serif; 
 }
