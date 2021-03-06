@@ -1,0 +1,12 @@
+@import 'normalize.css';
+
+
+/* CUSTOM CSS */
+@font-face {
+  font-family: Standard;
+  src: url(standard_book-3.woff);
+}
+
+html {
+	font-family: Standard, Helvetica, Arial, sans-serif; 
+}
