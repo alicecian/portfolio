@@ -11,6 +11,52 @@
 }
 
 
-html {
+* {
 	font-family: 'Standard', Helvetica, Arial, sans-serif; 
+	box-sizing: border-box;
+}
+
+html {
+	max-width: 80%;
+	margin: 1.5rem auto;
+	padding: auto;	
+}
+
+h1, h2, p, a, button, li {
+	font-size: 1.5rem;
+	font-weight: normal;
+}
+
+li {
+	list-style-type: none;
+	padding-bottom: 0.75rem;
+}
+
+li:last-of-type {
+	padding-bottom: 0px;
+}
+
+span.expand {
+	padding: 3px;
+	vertical-align: super;
+}
+
+section {
+	margin-bottom: 1.5rem;
+}
+
+@media (min-width: 700px) {
+	body {
+		max-width: 50%;
+		margin-left: 5%;
+	}
+
+	main {
+		/* background: cyan; */
+	}
+
+	section {
+		/* background: lightgreen; */
+	}
+
 }
