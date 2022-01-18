@@ -1,94 +1,125 @@
 <!DOCTYPE html>
+<!-- /* hard coded by hand with no cms... */ -->
 <html>
     <head>
         <title>Alice Fang</title>
         <meta name="description" content="">
-        <link rel="icon" type="image/x-icon" href="images/favicon.png">
+        <link rel="icon" type="image/x-icon" href="images/favicon-flip.png">
         <meta name="keywords" content="">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="preload" as="font" href="fonts/standard-book-webfont.woff2" type="font/woff2" crossorigin="anonymous">
-        <link rel="preload" as="font" href="fonts/standard-book-webfont.woff" type="font/woff2" crossorigin="anonymous">
-        <script type="text/javascript" src="js/script.js"></script>
         <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-        <script>
-//            $(document).ready(function() {
-//                $("section").click(function() {
-//                    $("section").toggleClass("go");
-//                })
-//            })
-        </script>
-    </head>
-    <body>
-       <header>
-           <h1>Alice Fang</h1>
-       </header>
-        <section>
-            <p>Currently the digital news design fellow @ <a href="https://www.nytimes.com/by/alice-fang">NYT</a>. Graphic + interaction designer and writer, recently graduated from Carnegie Mellon University.</p>
-            <a href="https://drive.google.com/file/d/1T85RXS_daQUqmuNnqyAElx591JBNSyNj/view?usp=sharing" target="_blank">Resume</a>
-        </section>      
-       <main class="side-bar">
-            <section>
-                <h2>At the Times</a></h2>
-                <ul class="list-wrapper">
-                    <li>
-                        <a href="https://www.nytimes.com/interactive/2021/07/16/arts/kamala-harris-name-sign-language.html">
-                            What Matters in a Name Sign?</a><span class="expand">+</span>
-                    </li>
-                    <li>
-                        <a href="https://www.nytimes.com/interactive/2021/08/07/sports/olympics/olympic-races.html">
-                            Tokyo Olympics Animations</a><span class="expand">+</span>
-                    </li>
-                    <li>
-                        <a href="https://www.nytimes.com/interactive/2021/08/20/sports/summer-freedom.html">
-                            Freedom Series</a><span class="expand">+</span>
-                    </li>
-                    <li>
-                        <a href="https://www.nytimes.com/interactive/2021/09/25/us/asian-americans.html">
-                            How It Feels to Be Asian in Today's America</a><span class="expand">+</span>
-                    </li>
-                    <li>
-                        <a href="https://www.nytimes.com/interactive/2021/well/chronic-pain.html">
-                            Chronic Pain Series</a><span class="expand">+</span>
-                    </li>
-                    <!-- <li>52 Places for a Changed World</li> -->
-                    <!-- <li>Beijing Olympics Animations</li> -->
-                </ul>
-                <div class="footnotes"></div>
-                <div class="desktop-img-wrapper">
-                    <figure></figure>
-                    <figure></figure>
-                    <figure></figure>
-                </div>
-            </section>
-             <!-- <section>
-                <h2>Print<span class="expand">+</span></h2>
-                <ul class="list-wrapper">
-                    <li>What Critical Issues Face Design Today?</li>
-                    <li>Lunar Gala: Anomie</li>
-                </ul>
-            </section>
-           <section>
-                <h2>Digital<span class="expand">+</span></h2>
-                <ul class="list-wrapper">
-                    <li>What Critical Issues Face Design Today?</li>
-                    <li>Reading_Trends</li>
-                    <li>Macroinvertebrates.org</li>
-                </ul>
-            </section>
-            <section>
-                <h2>Physical<span class="expand">+</span></h2>
-                <ul class="list-wrapper">
-                    <li>zoöid</li>
-                    <li>nano</li>
-                    <li>Calligraphy</li>
+        <script type="text/javascript" src="js/script.js"></script>
 
+    </head>
+
+    <body>
+        <div class="side-column left column desktop">
+            <!-- testyyyyyyyyy -->
+        </div>
+
+        <div class="main-column column desktop">
+            <header>
+                <h1>Alice Fang</h1>
+                <p>Interaction designs. Graphic designs. Codes sometimes. Calligraphy-s.</p>
+            </header>    
+
+            <span>* * *</span>
+
+            <section id="work-nyt" class="section">
+                <span>2021–2022</span>
+                <p>Currently the digital news design fellow <a href="https://www.nytco.com/careers/newsroom/newsroom-fellowship/2021-22-fellows/">[1]</a> at the New York Times <a href="https://www.nytimes.com/by/alice-fang">[2]</a>, where she designs, art directs, and develops interactives and feature articles to tell compelling visual stories.</p>
+
+                <ul class="list-wrapper" id="desdev">
+                    <li id="52places">Designed and developed the annual travel list, <button class="list-item closed">52 Places for a Changed World</button> 
+                        <a href="https://www.nytimes.com/interactive/2022/travel/52-places-travel-2022.html">
+                        [3]</a>
+                        with some sexy scroll-snap interaction.
+                    </li>
+                    <li id="name-sign">Designed video interactions and small video moments for <button class="list-item closed">What Matters in a Name Sign? </button>
+                        <a href="https://www.nytimes.com/interactive/2021/07/16/arts/kamala-harris-name-sign-language.html">
+                        [4]</a>, built with Gabriel Gianordoli.
+                    </li>
+                    <li id="asian-in-america"><button class="list-item closed">How It Feels to Be Asian in Today's America </button>
+                        <a href="https://www.nytimes.com/interactive/2021/09/25/us/asian-americans.html">
+                        [5]</a>.
+                    </li>
                 </ul>
-            </section> -->
-       </main>
-       <footer>
-       		<p>©2021 Alice Fang.</p>  
-       </footer> 
+
+                <ul class="list-wrapper" id="series">
+                    <li id="chronic-pain"><button class="list-item closed">Chronic Pain Series</button>
+                        <a href="https://www.nytimes.com/interactive/2021/well/chronic-pain.html">
+                            [6]</a>,
+                        <a href="https://www.nytimes.com/es/interactive/2021/espanol/dolor-cronico-cerebro.html"> [7]</a>,
+                        <a href="https://www.nytimes.com/2021/11/09/well/mind/john-sarno-chronic-pain-relief.html"> [8]</a>
+                    </li>
+                    <li id="sports-freedom"><button class="list-item closed">Freedom Series </button>
+                        <a href="https://www.nytimes.com/interactive/2021/08/20/sports/summer-freedom.html">
+                            [9]</a>,
+                        <a href="https://www.nytimes.com/2021/08/18/sports/swimming-champion-rock-climbing-freedom.html"> [10]</a>,
+                        <a href="https://www.nytimes.com/2021/08/18/sports/freedom-wyoming-summer.html"> [11]</a>
+                    </li>
+                </ul>
+
+                <ul class="list-wrapper" id="double-oly">
+                    <li id="tokyo"><button class="list-item closed">Tokyo Olympics Animations</button>
+                        <a href="https://www.nytimes.com/interactive/2021/08/07/sports/olympics/olympic-races.html">
+                            [11]</a>,
+                        <a href="https://twitter.com/nytimes/status/1421294896640663553?s=20"> [12]</a>,
+                        <a href="https://twitter.com/nytgraphics/status/1420223332394446854"> [13]</a>,
+                        <a href="https://twitter.com/nytimes/status/1422549084410363910"> [14]</a>,
+                        <a href="https://twitter.com/nytimes/status/1422752999709974533"> [15]</a>
+                    </li>
+                    <li id="beijing"><button class="list-item closed">Beijing Olympics Animations</button>
+                        <a href="#">[...]</a>
+                    </li>
+                </ul>
+            </section>
+
+            <span>* * *</span>
+
+            <section id="cmu" class="section">
+                <span>2019–2021</span>
+                <p>Graduated from Carnegie Mellon Univ. with a degree in communication design and a minor in professional writing.</p>
+
+                <p>Created a <a>book</a> and <a href="https://rachelwtlee.github.io/aiga/">website</a> using AIGA Design Census Data, to examine what people thought were critical issues in the field.
+                    Designed a mobile field guide <a href="https://apps.apple.com/us/app/pocketmacros/id1576895516">app</a> for insect identification, and other <a href="https://www.macroinvertebrates.org/">digi-tech-citizen-science things</a>.
+                    With amazing collaborators and using other people's money*, built a <a href="https://alicefang.me/nano">nano</a> museum for her senior capstone, and fabricated a <a href="https://studioforcreativeinquiry.org/project/zooid">fashion-light-art-installation</a> right befor the pandemic.
+                </p>
+                
+                <aside>*The Frank-Ratchye STUDIO for Creative Inquiry <a href="https://studioforcreativeinquiry.org/">[?]</a></aside> <br>
+            </section>  
+            
+            
+
+            <span>* * *</span>
+
+
+            <section class="footnotes" class="section">
+
+                <p>Open to collaboration and freelance work <a href="mailto: alicecfang@gmail.com" target="_blank">[18]</a></p>
+                <p>Resume <a href="https://drive.google.com/file/d/1T85RXS_daQUqmuNnqyAElx591JBNSyNj/view?usp=sharing" target="_blank">[?]</a></p>
+
+                <br>
+                <p>Older Site <a href="https://alicefang.me/">[19]</a></p>
+            
+            </section>
+
+            
+            <footer>
+                    <p>©2022 Alice Fang.</p>  
+            </footer> 
+        </div>
+
+        <div class="side-column right column desktop">
+            <!-- testyyyyyyyy right -->
+            <picture>
+                <img src="images/nyt/pain-top.png" class="fpo"> 
+            </picture>
+        </div>
+
+
+        
     </body>
 </html>
