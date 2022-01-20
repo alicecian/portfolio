@@ -188,8 +188,9 @@ button.list-item {
 		left: 50%;
 		transform: translate(-50%, -50%);
 		
-		width: auto;
-		height: 400px;
+		max-width: 90%;
+		height: auto;
+		/* height: 400px; */
 	}
 
 	
@@ -203,7 +204,7 @@ button.list-item {
 	}
 
 	.side-column.left {
-		width: 10%;
+		width: 5%;
 		margin-right: 1.5rem;
 	}
 
