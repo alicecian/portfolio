@@ -72,6 +72,9 @@ footer {
 	/* background-color: aliceblue; */
 }
 
+.highlights.active {
+	background-color: var(--li-hover-color);
+}
 
 .side-column {
 	display: none;

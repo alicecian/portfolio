@@ -8,11 +8,13 @@ $(document).ready(function(){
 
 const sectionEls = [...document.querySelectorAll('.section')];
 const gifs = [...document.querySelectorAll('.gif-y')];
+const highlights = [...document.querySelectorAll('.highlights')];
 
-// console.log(sectionEls)
 
+console.log(highlights)
 
-function match(section) {
+// match gifs to section
+function Match(section) {
     let index;
     let id = section.id
     let active = null
@@ -22,16 +24,35 @@ function match(section) {
         if (id === match) {
             active = gifs[i]
             index = i;
-            console.log("match!")
         }
         gifs[i].classList.remove('active')
+    }
+
+    if (active) {
+        active.classList.add('active')
+    }
+}
+
+// match highlight to section
+function Highlight(section) {
+    let index;
+    let id = section.id
+    let active = null
+
+    for (var i = 0; i < highlights.length; i++) {
+        let match = highlights[i].getAttribute('data-id')
+        if (id === match) {
+            active = highlights[i]
+            index = i;
+            console.log("match!")
+        }
+        highlights[i].classList.remove('active')
         console.log("remove active")
     }
 
     if (active) {
         active.classList.add('active')
         console.log("active!")
-        
     }
 }
 
@@ -44,7 +65,9 @@ let callback = (entries, observer) => {
 
             entry.target.classList.add("active");
             // gifs.classList.contains(entry.target.id).add("active");
-            match(entry.target)
+            Match(entry.target)
+            Highlight(entry.target)
+
 
         } else {
             // console.log('out')
