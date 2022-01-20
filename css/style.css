@@ -73,7 +73,8 @@ footer {
 }
 
 .highlights.active {
-	background-color: var(--li-hover-color);
+	color: green;
+	/* background-color: var(--li-hover-color); */
 }
 
 .side-column {
@@ -87,7 +88,8 @@ button.list-item {
 }
 
 .list-wrapper li:hover {
-	background-color: var(--li-hover-color);
+	/* background-color: var(--li-hover-color); */
+	color: green;
 }
 
 
@@ -140,7 +142,8 @@ button.list-item {
 	}
 
 	button:hover {
-		color: var(--link-text-color);
+		/* color: var(--link-text-color); */
+		color: green;
 		cursor: pointer;
 	}
 
