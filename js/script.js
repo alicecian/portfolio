@@ -1,14 +1,24 @@
-var colors = ['red', 'blue', 'green', 'deeppink', 'cornflowerblue', 'darkblue', 'darkgreen', 'magenta', 'palevioletred', 'yellowgreen', 'orange', 'blueviolet', 'plum', 'crimson', 'coral', 'orangered', 'purple'];
+var colors = ['red', 'blue', 'green', 'deeppink', 'royalblue', 'peru', 'cornflowerblue', 'seagreen', 'saddlebrown', 'sienna', 'steelblue', 'turquoise', 'teal', 'darkblue', 'darkgreen', 'magenta', 'palevioletred', 'olive', 'salmon', 'orange', 'blueviolet', 'plum', 'crimson', 'coral', 'orangered', 'purple', 'rebeccapurple'];
+var backgroundColors = ['aliceblue', 'blanchedalmond', 'cyan', 'gold', 'lavender', 'lavendarblush', 'lemonchiffon', 'lightblue', 'lightgreen', 'lightpink', 'mistyrose', 'peachpuff', 'pink', 'powderblue', 'rosybrown', 'plum', 'yellow', 'tomato', 'yellowgreen', 'seashell'];
+
 const sectionEls = [...document.querySelectorAll('.section')];
 const gifs = [...document.querySelectorAll('.gif-y')];
 const highlights = [...document.querySelectorAll('.highlights')];
 
-$("button").hover(function() {
+$("button").mouseenter(function() {
     $(this).css('color', colors[Math.floor(Math.random() * colors.length)])   
 })
 
-$("a").hover(function() {
-    $(this).css('background-color', colors[Math.floor(Math.random() * colors.length)])   
+$("button").mouseout(function() {
+    $(this).css('color', 'rgb(1, 40, 4)')
+})
+
+$("a").mouseenter(function() {
+    $(this).css('background-color', backgroundColors[Math.floor(Math.random() * backgroundColors.length)])   
+})
+
+$("a").mouseout(function() {
+    $(this).css('background-color', 'inherit')   
 })
 
 
