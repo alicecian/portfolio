@@ -89,7 +89,7 @@ button.list-item {
 
 .list-wrapper li:hover {
 	/* background-color: var(--li-hover-color); */
-	color: green;
+	/* color: green; */
 }
 
 
