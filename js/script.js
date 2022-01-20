@@ -1,11 +1,12 @@
-$(document).ready(function(){
-    $(".list-wrapper li").hover(function() {
-        console.log('hover')
-    })
+// $(document).ready(function(){
+//     $(".list-wrapper li").hover(function() {
+//         console.log('hover')
+//     })
 
-});
+// });
 
 
+var colors = ['red', 'blue', 'green', 'yellowgreen', 'rosybrown', 'blueviolet', 'plum', 'crimson', 'coral', 'orangered', 'purple'];
 const sectionEls = [...document.querySelectorAll('.section')];
 const gifs = [...document.querySelectorAll('.gif-y')];
 const highlights = [...document.querySelectorAll('.highlights')];
@@ -41,6 +42,7 @@ function Highlight(section) {
 
     for (var i = 0; i < highlights.length; i++) {
         let match = highlights[i].getAttribute('data-id')
+
         if (id === match) {
             active = highlights[i]
             index = i;
@@ -52,6 +54,10 @@ function Highlight(section) {
 
     if (active) {
         active.classList.add('active')
+
+        //randomize highlight color :-)
+        // show once scroll start
+        active.style.color = colors[Math.floor(Math.random() * colors.length)];
         console.log("active!")
     }
 }
@@ -61,16 +67,11 @@ let callback = (entries, observer) => {
     entries.forEach(entry => {
             
         if (entry.isIntersecting) {
-            // console.log('in')
-
             entry.target.classList.add("active");
-            // gifs.classList.contains(entry.target.id).add("active");
             Match(entry.target)
             Highlight(entry.target)
 
-
         } else {
-            // console.log('out')
             entry.target.classList.remove("active");
         }
         

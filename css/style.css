@@ -13,11 +13,12 @@
 	--background-color: rgb(186, 240, 80);
 	--li-hover-color: rgba(186, 240, 80, 0.25);
 	--max-width: 100%;
+	--highlight-color: blue;
 }
 
 html {
 	max-width: var(--max-width);
-	margin: 1.5rem auto;
+	margin: 1.5rem auto 3rem;
 	padding: 1rem;
 }
 
@@ -73,7 +74,7 @@ footer {
 }
 
 .highlights.active {
-	color: green;
+	color: var(--highlight-color);
 	/* background-color: var(--li-hover-color); */
 }
 
@@ -85,6 +86,10 @@ button.list-item {
 	-webkit-text-decoration: 1px dotted underline;
 	text-decoration: 1px dotted underline;
 	text-align: left;
+}
+
+.list-intro {
+	margin-bottom: 3rem;
 }
 
 .list-wrapper li:hover {
@@ -143,7 +148,7 @@ button.list-item {
 
 	button:hover {
 		/* color: var(--link-text-color); */
-		color: green;
+		color: var(--highlight-color);
 		cursor: pointer;
 	}
 
