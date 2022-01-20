@@ -7,19 +7,50 @@ $(document).ready(function(){
 
 
 const sectionEls = [...document.querySelectorAll('.section')];
-console.log(sectionEls)
+const gifs = [...document.querySelectorAll('.gif-y')];
+
+// console.log(sectionEls)
+
+
+function match(section) {
+    let index;
+    let id = section.id
+    let active = null
+
+    for (var i = 0; i < gifs.length; i++) {
+        let match = gifs[i].getAttribute('data-id')
+        if (id === match) {
+            active = gifs[i]
+            index = i;
+            console.log("match!")
+        }
+        gifs[i].classList.remove('active')
+        console.log("remove active")
+    }
+
+    if (active) {
+        active.classList.add('active')
+        console.log("active!")
+        
+    }
+}
 
 let callback = (entries, observer) => {
+
     entries.forEach(entry => {
+            
         if (entry.isIntersecting) {
             // console.log('in')
+
             entry.target.classList.add("active");
+            // gifs.classList.contains(entry.target.id).add("active");
+            match(entry.target)
 
         } else {
             // console.log('out')
             entry.target.classList.remove("active");
-
         }
+        
     })
 }
 
