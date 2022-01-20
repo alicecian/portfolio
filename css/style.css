@@ -3,8 +3,30 @@
 
 /* CUSTOM CSS */
 
+/* FOR TESTING ONLY */
+@font-face {
+	font-family: "BradfordLLWebTrial-Regular";
+	src: url("BradfordLLWebTrial-Regular.woff") format("woff");
+}
+@font-face {
+	font-family: 'cardinalfruit-regular';
+		src: 
+			url('cardinalfruitweb-regular-TRIAL.eot?#iefix') format('embedded-opentype'),
+			url('cardinalfruitweb-regular-TRIAL.woff') format('woff');
+	}
+@font-face {
+	font-family: 'cardinalfruit-italic';
+		src: 
+			url('cardinalfruitweb-italic-TRIAL.eot?#iefix') format('embedded-opentype'),
+			url('cardinalfruitweb-italic-TRIAL.woff') format('woff');
+	}
+
+
 * {
-	font-family:'Times New Roman', Times, serif;
+	/* font-family: "BradfordLLWebTrial-Regular"; */
+	/* font-family: 'cardinalfruit-regular'; */
+
+	font-family: 'Times New Roman', Times, serif;
 	/* font-family: Arial, Helvetica, sans-serif; */
 
 	box-sizing: border-box;
@@ -23,7 +45,7 @@ html {
 }
 
 header {
-	margin-top: 25vh;	
+	margin-top: 15vh;	
 }
 
 body {
@@ -37,7 +59,7 @@ section {
 h1, h2, h3,
 p, a, button, li, span {
 	font-size: 1.3rem;
-	line-height: 120%;
+	line-height: 125%;
 	font-weight: normal;
 	color: var(--text-color);
 }

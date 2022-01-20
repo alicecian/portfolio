@@ -1,15 +1,16 @@
-// $(document).ready(function(){
-//     $(".list-wrapper li").hover(function() {
-//         console.log('hover')
-//     })
-
-// });
-
-
-var colors = ['red', 'blue', 'green', 'yellowgreen', 'rosybrown', 'blueviolet', 'plum', 'crimson', 'coral', 'orangered', 'purple'];
+var colors = ['red', 'blue', 'green', 'deeppink', 'cornflowerblue', 'darkblue', 'darkgreen', 'magenta', 'palevioletred', 'yellowgreen', 'orange', 'blueviolet', 'plum', 'crimson', 'coral', 'orangered', 'purple'];
 const sectionEls = [...document.querySelectorAll('.section')];
 const gifs = [...document.querySelectorAll('.gif-y')];
 const highlights = [...document.querySelectorAll('.highlights')];
+
+$("button").hover(function() {
+    $(this).css('color', colors[Math.floor(Math.random() * colors.length)])   
+})
+
+$("a").hover(function() {
+    $(this).css('background-color', colors[Math.floor(Math.random() * colors.length)])   
+})
+
 
 
 console.log(highlights)
@@ -46,10 +47,10 @@ function Highlight(section) {
         if (id === match) {
             active = highlights[i]
             index = i;
-            console.log("match!")
+            // console.log("match!")
         }
         highlights[i].classList.remove('active')
-        console.log("remove active")
+        // console.log("remove active")
     }
 
     if (active) {
@@ -58,7 +59,7 @@ function Highlight(section) {
         //randomize highlight color :-)
         // show once scroll start
         active.style.color = colors[Math.floor(Math.random() * colors.length)];
-        console.log("active!")
+        // console.log("active!")
     }
 }
 
@@ -81,8 +82,8 @@ let callback = (entries, observer) => {
 //need to tweak
 const options = {
     root: null,
-    rootMargin: '-15% 0px 10% 0px',
-    threshold: 0.85
+    rootMargin: '-10% 0px 10% 0px',
+    threshold: 0.75
 };
 
 const observer = new IntersectionObserver(callback, options);
