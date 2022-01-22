@@ -19,6 +19,12 @@
 			url('cardinalfruitweb-italic-TRIAL.eot?#iefix') format('embedded-opentype'),
 			url('cardinalfruitweb-italic-TRIAL.woff') format('woff');
 	}
+@font-face {
+	font-family: 'cardinalfruit-mediun';
+		src: 
+			url('cardinalfruitweb-medium-TRIAL.eot?#iefix') format('embedded-opentype'),
+			url('cardinalfruitweb-medium-TRIAL.woff') format('woff');
+	}
 
 
 * {
@@ -103,10 +109,11 @@ footer {
 	display: none;
 }
 
-button.list-item {
+.list-item {
 	-webkit-text-decoration: 1px dotted underline;
 	text-decoration: 1px dotted underline;
 	text-align: left;
+
 }
 
 .list-intro {
@@ -159,6 +166,15 @@ button.list-item {
     	transform: translateY(-50%);
 	}
 
+	.starry {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		flex-direction: column;
+	}
+
 	.side-column.right {
 		display: none;
 	}
@@ -167,7 +183,7 @@ button.list-item {
 		background-color: var(--background-color);
 	}
 
-	button:hover {
+	.list-item:hover {
 		/* color: var(--link-text-color); */
 		color: var(--highlight-color);
 		cursor: pointer;
@@ -193,6 +209,14 @@ button.list-item {
 		/* height: 400px; */
 	}
 
+	.hovered {
+		opacity: 0;
+	}
+
+	.hovered.active {
+		opacity: 1;
+	}
+
 	
 
 }
@@ -200,7 +224,7 @@ button.list-item {
 /* lg desktop */
 @media (min-width: 1024px) {
 	.main-column {
-		width: 40%;
+		width: 460px;
 	}
 
 	.side-column.left {
