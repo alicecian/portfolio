@@ -205,9 +205,7 @@ p.projects,
 		background-color: var(--background-color);
 	}
 
-	.list-item:hover {
-		/* color: var(--link-text-color); */
-		color: var(--highlight-color);
+	.list-wrapper li:hover {
 		cursor: pointer;
 	}
 
