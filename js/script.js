@@ -8,12 +8,15 @@ const nytLis = [...document.querySelectorAll('.list-wrapper li')];
 const nythovers = [...document.querySelectorAll('.hovered-nyt .hovered')];
 
 
-$("button").mouseenter(function() {
+
+
+
+$(".list-item").mouseenter(function() {
     $(this).css('color', colors[Math.floor(Math.random() * colors.length)])   
 })
 
-$("button").mouseout(function() {
-    $(this).css('color', 'rgb(1, 40, 4)')
+$(".list-item").mouseout(function() {
+    $(this).css('color', 'inherit')
 })
 
 $("a").mouseenter(function() {

@@ -35,6 +35,8 @@
 
 	box-sizing: border-box;
 	--text-color: rgb(1, 40, 4);
+	--section-text-color: rgb(111 129 113); ;
+
 	--link-text-color: darkgreen;
 	--background-color: rgb(186, 240, 80);
 	--li-hover-color: rgba(186, 240, 80, 0.25);
@@ -68,6 +70,8 @@ p, a, button, li, span {
 	color: var(--text-color);
 }
 
+aside { color: var(--text-color);}
+
 p {margin-top: 0.5rem;}
 
 
@@ -95,6 +99,11 @@ ul {
 footer {
 	margin-top: 3rem;
 }
+
+footer aside {
+	margin-top: 4px;
+    /* text-indent: 15px; */
+}
 .section.active {
 	/* background-color: aliceblue; */
 }
@@ -112,17 +121,21 @@ footer {
 	-webkit-text-decoration: 1px dotted underline;
 	text-decoration: 1px dotted underline;
 	text-align: left;
-
-}
-
-.list-intro {
-	margin-bottom: 3rem;
+	/* color: var(--section-text-color); */
 }
 
 .list-wrapper li:hover {
 	/* background-color: var(--li-hover-color); */
 	/* color: green; */
 }
+
+/* .projects li,
+p.projects,
+.projects a 
+{
+	color: var(--section-text-color);
+} */
+
 
 
 /* m desktop */
