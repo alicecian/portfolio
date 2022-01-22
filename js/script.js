@@ -91,7 +91,7 @@ function Highlight(section) {
     if (active) {
         active.classList.add('active')
         //randomize highlight color :-)
-        active.style.color = colors[Math.floor(Math.random() * colors.length)];
+        active.style.backgroundColor = backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
     }
 }
 

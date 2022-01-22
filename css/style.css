@@ -41,7 +41,7 @@
 	--background-color: rgb(186, 240, 80);
 	--li-hover-color: rgba(186, 240, 80, 0.25);
 	--max-width: 100%;
-	--highlight-color: blue;
+	--highlight-color: var(--text-color);
 }
 
 html {
