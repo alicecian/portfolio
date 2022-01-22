@@ -10,6 +10,7 @@ const nythovers = [...document.querySelectorAll('.hovered-nyt .hovered')];
 
 $("a").mouseenter(function() {
     $(this).css('background-color', backgroundColors[Math.floor(Math.random() * backgroundColors.length)])   
+    $(this).css('color', colors[Math.floor(Math.random() * colors.length)])   
 })
 
 $("a").mouseout(function() {
