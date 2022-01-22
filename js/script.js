@@ -8,14 +8,6 @@ const nytLis = [...document.querySelectorAll('.list-wrapper li')];
 const nythovers = [...document.querySelectorAll('.hovered-nyt .hovered')];
 
 
-$(".list-item").mouseenter(function() {
-    $(this).css('color', colors[Math.floor(Math.random() * colors.length)])   
-})
-
-$(".list-item").mouseout(function() {
-    $(this).css('color', 'inherit')
-})
-
 $("a").mouseenter(function() {
     $(this).css('background-color', backgroundColors[Math.floor(Math.random() * backgroundColors.length)])   
 })
@@ -26,7 +18,9 @@ $("a").mouseout(function() {
 
 $(".list-wrapper li").mouseover(function() {
     let id = $(this).attr("id")
-   
+    $(this).css('color', colors[Math.floor(Math.random() * colors.length)])   
+    $(this).children().css('color', colors[Math.floor(Math.random() * colors.length)])   
+
     // associated project img
     $('.hovered-nyt .hovered').each(function() {
         let dataId = $(this).attr("data-id");
@@ -50,7 +44,7 @@ $(".list-wrapper li").mouseover(function() {
 })
 
 $(".list-wrapper li").mouseout(function() {
-    $(this).css('background-color', 'transparent');
+    $(this).css('color', 'inherit')
 })
 
 
