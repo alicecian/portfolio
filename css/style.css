@@ -50,27 +50,44 @@ html {
 	padding: 1rem;
 }
 
-header {
-	margin-top: 15vh;	
-}
-
 body {
 	display: flex;
 }
 
+header {
+	margin-top: 15vh;	
+	margin-bottom: 3.5rem;
+}
+
 section {
-	margin-top: 3rem;
+	margin-top: 2rem;
+	margin-bottom: 3.5rem;
+}
+
+footer {
+	margin-top: 2rem;
+}
+
+footer aside {
+	margin-top: 8px;
+    /* text-indent: 15px; */
 }
 
 h1, h2, h3,
 p, a, button, li, span {
-	font-size: 1.3rem;
+	font-size: 1.25rem;
 	line-height: 125%;
 	font-weight: normal;
 	color: var(--text-color);
 }
 
 aside { color: var(--text-color);}
+
+hr {
+	/* width: 85%; */
+	opacity: 0.5;
+	margin-left: 0;
+}
 
 p {margin-top: 0.5rem;}
 
@@ -96,14 +113,7 @@ ul {
 	padding-inline-start: 0px;
 }
 
-footer {
-	margin-top: 3rem;
-}
 
-footer aside {
-	margin-top: 4px;
-    /* text-indent: 15px; */
-}
 .section.active {
 	/* background-color: aliceblue; */
 }

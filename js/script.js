@@ -8,9 +8,6 @@ const nytLis = [...document.querySelectorAll('.list-wrapper li')];
 const nythovers = [...document.querySelectorAll('.hovered-nyt .hovered')];
 
 
-
-
-
 $(".list-item").mouseenter(function() {
     $(this).css('color', colors[Math.floor(Math.random() * colors.length)])   
 })
@@ -27,46 +24,29 @@ $("a").mouseout(function() {
     $(this).css('background-color', 'inherit')   
 })
 
-
-function MatchHover(li) {
-    let index;
-    let id = li.id
-    let active = null;
-
-    for (var i = 0; i < nythovers.length; i++) {
-        let match = nythovers[i].getAttribute('data-id')
-        if (id === match) {
-            active = nythovers[i]
-            index = i;
-        }
-        nythovers[i].classList.remove('active')
-    }
-    if (active) {
-        active.classList.add('active')
-    }
-}
-
-// Array.prototype.forEach.call(nytLis, (el) => {
-//     el.addEventListener('mouseover', Match(el, nythovers))
-// });
-// element.addEventListener('mouseover',someFunction);
-
 $(".list-wrapper li").mouseover(function() {
-    $(this).css('background-color', 'aliceblue');
+    let id = $(this).attr("id")
+   
+    // associated project img
+    $('.hovered-nyt .hovered').each(function() {
+        let dataId = $(this).attr("data-id");
 
-    // let id = $(this).attr("id")
-    // console.log(id)
-    // let li = $(this)
-    // console.log(li)
+        if (dataId == id) {
+            $(this).addClass('active')
 
-    // Match(li, nythovers)
-    // let img = $(".hovered-nyt .hovered")
-    // console.log(img)
+            // check category img
+            $('.default .gif-y').each(function() {
+                // console.log($(this))
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active')
+                }
+            })
 
-
-    // MatchHover($(this))
-    // // let hoverImg = $(".hovered-nyt").find(".hovered").atrr("data-" + id)
-    // // console.log(hoverImg)
+        } else {
+            $(this).removeClass('active')
+        }
+    })
+  
 })
 
 $(".list-wrapper li").mouseout(function() {
@@ -115,11 +95,14 @@ function Highlight(section) {
 
     if (active) {
         active.classList.add('active')
-
         //randomize highlight color :-)
-        // show once scroll start
         active.style.color = colors[Math.floor(Math.random() * colors.length)];
-        // console.log("active!")
+    }
+}
+
+function clear(array) {
+    for (var i = 0; i < array.length; i++) {
+        array[i].classList.remove('active')
     }
 }
 
@@ -131,6 +114,7 @@ let callback = (entries, observer) => {
             entry.target.classList.add("active");
             Highlight(entry.target)
             Match(entry.target, gifs)
+            clear(nythovers)
 
         } else {
             entry.target.classList.remove("active");
