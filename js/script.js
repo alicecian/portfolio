@@ -1,11 +1,12 @@
-var colors = ['red', 'blue', 'green', 'deeppink', 'royalblue', 'peru', 'cornflowerblue', 'rosybrown', 'seagreen', 'saddlebrown', 'sienna', 'steelblue', 'turquoise', 'teal', 'magenta', 'palevioletred', 'olive', 'salmon', 'orange', 'blueviolet', 'plum', 'crimson', 'coral', 'orangered', 'purple', 'rebeccapurple'];
-var backgroundColors = ['aliceblue', 'blanchedalmond', 'cyan', 'gold', 'lavender', 'lavenderblush', 'lemonchiffon', 'lightblue', 'lightgreen', 'lightpink', 'mistyrose', 'peachpuff', 'pink', 'powderblue', 'plum', 'yellow', 'tomato', 'yellowgreen', 'seashell'];
+var colors = ['blue', 'blueviolet', 'brown', 'cadetblue', 'chocolate', 'coral', 'cornflowerblue', 'crimson', 'darkcyan', 'darkmagenta', 'darkorange', 'darkorchid', 'darkred', 'darksalmon', 'darkseagreen', 'darkturquoise', 'deeppink', 'dodgerblue', 'firebrick', 'forestgreen', 'fuchsia', 'goldenrod', 'green', 'greenyellow', 'indigo', 'lightcoral', 'lightseagreen', 'magenta', 'maroon', 'mediumaquamarine', 'mediumblue', 'mediumorchid', 'mediumpurple', 'mediumslateblue', 'mediumspringgreen', 'mediumturquoise', 'mediumvioletred', 'olive', 'olivedrab', 'orange', 'orangered', 'orchid', 'palevioletred', 'peru', 'plum', 'purple', 'rebeccapurple', 'red', 'rosybrown', 'royalblue', 'saddlebrown', 'salmon', 'sandybrown', 'seagreen', 'sienna', 'skyblue', 'slateblue', 'steelblue', 'teal', 'tomato', 'turquoise', 'violet', 'yellowgreen'];
+var backgroundColors = ['aliceblue', 'khaki', 'lavender', 'lavenderblush', 'lemonchiffon', 'lightcyan', 'lightgreen', 'lightpink', 'lightsalmon', 'lightsteelblue', 'mistyrose', 'mocaasin', 'palegoldenrod', 'palegreen', 'paleturquoise', 'papayawhip', 'peachpuff', 'pink', 'powderblue', 'thistle', 'yellow'];
 
 const sectionEls = [...document.querySelectorAll('.section')];
 const gifs = [...document.querySelectorAll('.gif-y')];
 const highlights = [...document.querySelectorAll('.highlights')];
 const nytLis = [...document.querySelectorAll('.list-wrapper li')];
 const nythovers = [...document.querySelectorAll('.hovered-nyt .hovered')];
+const cmuhovers = [...document.querySelectorAll('.hovered-cmu .hovered')];
 
 
 $("a").mouseenter(function() {
@@ -37,15 +38,55 @@ $(".list-wrapper li").mouseover(function() {
                 }
             })
 
+            $('.hovered-cmu .hovered').each(function() {
+                // console.log($(this))
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active')
+                }
+            })
+
         } else {
             $(this).removeClass('active')
         }
     })
-  
 })
 
 $(".list-wrapper li").mouseout(function() {
     $(this).css('color', 'inherit')
+    $(this).children('.list-item').css('color', 'inherit')   
+
+})
+
+
+$(".projects a").mouseover(function() {
+    let id = $(this).attr("id")
+    $(this).css('color', colors[Math.floor(Math.random() * colors.length)])   
+    // $(this).children().css('color', colors[Math.floor(Math.random() * colors.length)])   
+
+    // associated project img
+    $('.hovered-cmu .hovered').each(function() {
+        let dataId = $(this).attr("data-id");
+        if (dataId == id) {
+            $(this).addClass('active')
+
+            // check category img
+            $('.default .gif-y').each(function() {
+                // console.log($(this))
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active')
+                }
+            })
+            $('.hovered-nyt .hovered').each(function() {
+                // console.log($(this))
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active')
+                }
+            })
+
+        } else {
+            $(this).removeClass('active')
+        }
+    })
 })
 
 
@@ -113,6 +154,15 @@ let callback = (entries, observer) => {
 
         } else {
             entry.target.classList.remove("active");
+
+            let id = entry.target.id
+            if (id !== 'work-nyt') {
+                // console.log('i am nyt')
+                // if entry == nyt remove active class from pic .hovered
+                Array.prototype.forEach.call(cmuhovers, (el) => {
+                    el.classList.remove('active')
+                })
+            }
         }
         
     })

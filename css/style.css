@@ -227,6 +227,7 @@ p.projects,
 		pointer-events: none;
 		
 		max-width: 90%;
+		max-height: 600px;
 		height: auto;
 		/* height: 400px; */
 	}
