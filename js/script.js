@@ -1,5 +1,6 @@
-var colors = ['blue', 'blueviolet', 'brown', 'cadetblue', 'chocolate', 'coral', 'cornflowerblue', 'crimson', 'darkcyan', 'darkmagenta', 'darkorange', 'darkorchid', 'darkred', 'darksalmon', 'darkseagreen', 'darkturquoise', 'deeppink', 'dodgerblue', 'firebrick', 'forestgreen', 'fuchsia', 'goldenrod', 'green', 'greenyellow', 'indigo', 'lightcoral', 'lightseagreen', 'magenta', 'maroon', 'mediumaquamarine', 'mediumblue', 'mediumorchid', 'mediumpurple', 'mediumslateblue', 'mediumspringgreen', 'mediumturquoise', 'mediumvioletred', 'olive', 'olivedrab', 'orange', 'orangered', 'orchid', 'palevioletred', 'peru', 'plum', 'purple', 'rebeccapurple', 'red', 'rosybrown', 'royalblue', 'saddlebrown', 'salmon', 'sandybrown', 'seagreen', 'sienna', 'skyblue', 'slateblue', 'steelblue', 'teal', 'tomato', 'turquoise', 'violet', 'yellowgreen'];
-var backgroundColors = ['aliceblue', 'khaki', 'lavender', 'lavenderblush', 'lemonchiffon', 'lightcyan', 'lightgreen', 'lightpink', 'lightsalmon', 'lightsteelblue', 'mistyrose', 'mocaasin', 'palegoldenrod', 'palegreen', 'paleturquoise', 'papayawhip', 'peachpuff', 'pink', 'powderblue', 'thistle', 'yellow'];
+// var colors = ['cornflowerblue', 'forestgreen', 'orangered', 'rebeccapurple', 'violet'];
+var colors = ['olivedrab', 'orangered', 'cornflowerblue', 'purple', 'plum', 'orange'];
+var backgroundColors = ['lavender', 'palegoldenrod', 'mistyrose', 'lightcyan', 'greenyellow'];
 
 const sectionEls = [...document.querySelectorAll('.section')];
 const gifs = [...document.querySelectorAll('.gif-y')];
