@@ -85,10 +85,9 @@ aside { color: var(--text-color);}
 
 hr {
 	/* width: 85%; */
-	opacity: 1;
+	opacity: .25;
 	/* border: 1px solid var(--text-color); */
 	margin-left: 0;
-	border-top: 1px dashed var(--text-color);
 }
 
 p {margin-top: 0.5rem;}
