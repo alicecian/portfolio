@@ -1,5 +1,5 @@
 // var colors = ['cornflowerblue', 'forestgreen', 'orangered', 'rebeccapurple', 'violet'];
-var colors = ['olivedrab', 'orangered', 'cornflowerblue', 'purple', 'plum', 'orange'];
+var colors = ['olivedrab', 'orangered', 'cornflowerblue', 'purple', 'orange'];
 var backgroundColors = ['lavender', 'palegoldenrod', 'mistyrose', 'lightcyan', 'greenyellow'];
 
 const sectionEls = [...document.querySelectorAll('.section')];
