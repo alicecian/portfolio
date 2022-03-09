@@ -81,7 +81,10 @@ p, a, button, li, span {
 	color: var(--text-color);
 }
 
-aside { color: var(--text-color);}
+aside { 
+	color: var(--text-color);
+	padding-top: 10px;
+}
 aside a {
 	font-size: inherit;
 }
@@ -124,7 +127,6 @@ ul {
 
 .highlights.active {
 	color: var(--highlight-color);
-	/* background-color: var(--li-hover-color); */
 }
 
 .side-column {
@@ -143,12 +145,6 @@ ul {
 	/* color: green; */
 }
 
-/* .projects li,
-p.projects,
-.projects a 
-{
-	color: var(--section-text-color);
-} */
 
 
 
