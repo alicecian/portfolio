@@ -82,6 +82,9 @@ p, a, button, li, span {
 }
 
 aside { color: var(--text-color);}
+aside a {
+	font-size: inherit;
+}
 
 hr {
 	/* width: 85%; */
