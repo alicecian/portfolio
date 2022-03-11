@@ -86,15 +86,18 @@ img.fpo {
 }
 
 .hovered {
+	display: none;
 	opacity: 0;
 }
 
 
 .gif-y {
+	display: none;
 	opacity: 0;
 }
 
 .gif-y.active {
+	display: block;
 	opacity: 1;
 }
 
@@ -267,11 +270,12 @@ ul {
 		/* height: 400px; */
 	}
 
-	.hovered {
+	/* .hovered {
 		opacity: 0;
-	}
+	} */
 
 	.hovered.active {
+		display: block;
 		opacity: 1;
 	}
 
