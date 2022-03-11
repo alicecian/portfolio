@@ -52,10 +52,55 @@ html {
 
 body {
 	display: flex;
+	flex-direction: column-reverse;
 }
 
+.column {
+	padding: 0px;
+}
+
+.side-column {
+	max-width: 100%;
+}
+
+.side-column.left {
+}
+
+.side-column.right {
+	position: fixed;
+	top: 20px;
+	width: 100%;
+	height: auto;
+}
+
+img.fpo {
+	position: absolute;
+	/* height: 250px;
+	width: auto; */
+	
+	width: 70%;
+	height: auto;
+
+	/* width: 275px; */
+	/* height: auto; */
+}
+
+.hovered {
+	opacity: 0;
+}
+
+
+.gif-y {
+	opacity: 0;
+}
+
+.gif-y.active {
+	opacity: 1;
+}
+
+
 header {
-	margin-top: 15vh;	
+	margin-top: 40vh;	
 	margin-bottom: 3.5rem;
 }
 
@@ -66,11 +111,11 @@ section {
 
 footer {
 	margin-top: 2rem;
+	/* margin-bottom: 275px; */
 }
 
 footer aside {
 	margin-top: 8px;
-    /* text-indent: 15px; */
 }
 
 h1, h2, h3,
@@ -90,9 +135,7 @@ aside a {
 }
 
 hr {
-	/* width: 85%; */
 	opacity: .25;
-	/* border: 1px solid var(--text-color); */
 	margin-left: 0;
 }
 
@@ -129,9 +172,7 @@ ul {
 	color: var(--highlight-color);
 }
 
-.side-column {
-	display: none;
-}
+
 
 .list-item {
 	-webkit-text-decoration: 1px dotted underline;
@@ -149,24 +190,27 @@ ul {
 
 
 /* m desktop */
-@media (min-width: 700px) {
+@media (min-width: 701px) {
 	html {
 		--max-width: 85%;
 		max-width: var(--max-width);
 	}
 
-	body {
+	body.desktop {
 		flex-direction: row;
 		margin: 0;
 		width: 100%;
 	}
 
-	.desktop {
+	header {
+		margin-top: 15vh;
+	}
+
+	.column {
 		padding: 0px 1.5rem;
 	}
 
 	.main-column {
-		/* max-width: 50%; */
 		width: 75%;
 		/* background-color: yellow;	 */
 	}
@@ -175,8 +219,8 @@ ul {
 		padding: 1.67em 0;
 	}
 
+	/* has class desktop */
 	.side-column.left {
-		/* max-width: 25%; */
 		width: 25%;
 		/* background-color: violet; */
 		margin-right: 1.5rem;
@@ -189,14 +233,11 @@ ul {
 	}
 
 	.starry {
-		/* position: absolute;
-		top: 50%; 
-		left: 50%;
-		transform: translate(-50%, 0); */
 		display: flex;
 		flex-direction: column;
 	}
 
+	/* has class desktop */
 	.side-column.right {
 		display: none;
 	}
@@ -210,14 +251,6 @@ ul {
 	}
 
 	
-	.gif-y {
-		opacity: 0;
-	}
-	
-	.gif-y.active {
-		opacity: 1;
-	}
-	
 	img.fpo {
 		position: absolute;
 		top: 50%;
@@ -227,6 +260,8 @@ ul {
 		pointer-events: none;
 		
 		max-width: 90%;
+		width: auto;
+		height: 600px;
 		max-height: 600px;
 		height: auto;
 		/* height: 400px; */
@@ -240,7 +275,9 @@ ul {
 		opacity: 1;
 	}
 
-	
+	footer {
+		margin-bottom: 1rem;
+	}
 
 }
 
@@ -250,11 +287,13 @@ ul {
 		width: 460px;
 	}
 
+	/* has class desktop */
 	.side-column.left {
 		width: 5%;
 		margin-right: 1.5rem;
 	}
 
+	/* has class desktop */
 	.side-column.right {
 		width: 50%;
 		margin-left: 1.5rem;
@@ -264,5 +303,6 @@ ul {
 		position: sticky;
 		top: 50%;
     	transform: translateY(-50%);
+		/* background-color: aqua; */
 	}
 }

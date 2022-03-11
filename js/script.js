@@ -1,6 +1,6 @@
 // var colors = ['cornflowerblue', 'forestgreen', 'orangered', 'rebeccapurple', 'violet'];
-var colors = ['olivedrab', 'orangered', 'cornflowerblue', 'purple', 'orange'];
-var backgroundColors = ['lavender', 'palegoldenrod', 'mistyrose', 'lightcyan', 'greenyellow'];
+let colors = ['olivedrab', 'orangered', 'cornflowerblue', 'purple', 'orange'];
+let backgroundColors = ['lavender', 'palegoldenrod', 'mistyrose', 'lightcyan', 'greenyellow'];
 
 const sectionEls = [...document.querySelectorAll('.section')];
 const gifs = [...document.querySelectorAll('.gif-y')];
@@ -91,6 +91,30 @@ $(".projects a").mouseover(function() {
 })
 
 
+
+// not responsive.. TODO fix
+const isMobile = window.matchMedia("only screen and (max-width: 450px)").matches;
+const bodyyy = document.querySelector('body');
+
+// let vwidth = window.innerWidth;
+// console.log('vwidth =', vwidth)
+
+if (isMobile) {
+    bodyyy.classList.remove('desktop')
+    // console.log('hi mobile', bodyyy);
+} else {
+    // console.log('hi desktop', bodyyy)
+    bodyyy.classList.add('desktop')
+}
+
+// var width = $(window).width();
+// $(window).resize(function () {
+//     if (width <= 700) {
+//         $(sideColumnR).removeClass('desktop');
+//         console.log('yo mobile')
+//     }
+// });
+
 // match gifs to section
 function Match(section, array) {
     let index;
@@ -173,7 +197,7 @@ let callback = (entries, observer) => {
 const options = {
     root: null,
     rootMargin: '-10% 0px 10% 0px',
-    threshold: 0.75
+    threshold: 0.70
 };
 
 const observer = new IntersectionObserver(callback, options);
