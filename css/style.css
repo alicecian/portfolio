@@ -152,7 +152,11 @@ p {margin-top: 0.5rem;}
 
 
 a {
-	text-decoration: 1px dotted underline;
+	/* text-decoration: 1px dotted underline; */
+	text-decoration-style: dotted;
+	text-decoration-line: underline;
+	text-decoration-color: var(--text-color);
+	text-decoration-thickness: 1px ;
 }
 
 ul.list-wrapper {
