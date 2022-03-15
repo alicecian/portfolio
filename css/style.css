@@ -177,6 +177,9 @@ ul {
 	/* background-color: aliceblue; */
 }
 
+.highlights {
+	/* font-style: italic; */
+}
 .highlights.active {
 	color: var(--highlight-color);
 }
@@ -184,8 +187,12 @@ ul {
 
 
 .list-item {
-	-webkit-text-decoration: 1px dotted underline;
-	text-decoration: 1px dotted underline;
+	/* font-style: italic; */
+	text-decoration-style: dotted;
+	text-decoration-line: underline;
+	text-decoration-color: var(--text-color);
+	text-decoration-thickness: 1px ;
+	/* text-decoration: 1px dotted underline; */
 	text-align: left;
 	/* color: var(--section-text-color); */
 }
