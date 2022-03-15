@@ -85,6 +85,12 @@ img.fpo {
 	/* height: auto; */
 }
 
+@media (min-width: 451px) {
+	img.fpo {
+		width: 250px;
+	}
+}
+
 .hovered {
 	display: none;
 	opacity: 0;
