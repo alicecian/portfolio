@@ -182,19 +182,9 @@ ul {
 	padding-inline-start: 0px;
 }
 
-
-.section.active {
-	/* background-color: aliceblue; */
-}
-
-.highlights {
-	/* font-style: italic; */
-}
 .highlights.active {
 	color: var(--highlight-color);
 }
-
-
 
 .list-item {
 	/* font-style: italic; */
@@ -301,22 +291,25 @@ ul {
 		position: relative;
 		color: var(--text-color);
 		font-size: 15px;
-
 		padding: 0px 4rem 0px 4rem;
 	}
 
-	/* .hovered {
-		opacity: 0;
-	} */
-
 	.hovered.active {
-		/* display: block; */
 		display: flex;
 		opacity: 1;
 	}
 
 	footer {
 		margin-bottom: 1rem;
+	}
+
+
+	img[data-id="secret-bug"] {
+		position: absolute;
+		bottom: -100px;
+		left: -350px;
+		width: 200px;
+		height: auto;
 	}
 
 }

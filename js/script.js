@@ -19,6 +19,7 @@ $("a").mouseout(function() {
     $(this).css('background-color', 'inherit')   
 })
 
+// nyt work section
 $(".list-wrapper li").mouseover(function() {
     let id = $(this).attr("id")
     $(this).css('color', colors[Math.floor(Math.random() * colors.length)])   
@@ -58,7 +59,7 @@ $(".list-wrapper li").mouseout(function() {
 
 })
 
-
+// nyt + work work section
 $(".projects a").mouseover(function() {
     let id = $(this).attr("id")
     $(this).css('color', colors[Math.floor(Math.random() * colors.length)])   
@@ -90,7 +91,29 @@ $(".projects a").mouseover(function() {
     })
 })
 
+// secret bug
+$("#secret-bug").mouseover(function() {
+    let id = $(this).attr("id")
+    $(this).css('color', colors[Math.floor(Math.random() * colors.length)])   
 
+    console.log(this)
+
+   
+    // let dataId = $(this).attr("data-id");
+    // if (dataId == id) {
+    //     $(this).addClass('active')
+    // } else {
+    //     $(this).removeClass('active')
+    // }
+})
+
+$("#secret-bug").mouseenter(function() {
+    $('.hovered-extra img.hovered').addClass('active')
+})
+
+$("#secret-bug").mouseout(function() {
+    $('.hovered-extra img.hovered').removeClass('active')
+})
 
 // not responsive.. TODO fix
 const isMobile = window.matchMedia("only screen and (max-width: 450px)").matches;
