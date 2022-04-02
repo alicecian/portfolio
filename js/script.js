@@ -9,100 +9,99 @@ const nytLis = [...document.querySelectorAll('.list-wrapper li')];
 const nythovers = [...document.querySelectorAll('.hovered-nyt .hovered')];
 const cmuhovers = [...document.querySelectorAll('.hovered-cmu .hovered')];
 
-
+// very inefficiently written jquery :-)
 $("a").mouseenter(function() {
-    $(this).css('background-color', backgroundColors[Math.floor(Math.random() * backgroundColors.length)])   
-    $(this).css('color', colors[Math.floor(Math.random() * colors.length)])   
+    $(this).css('background-color', backgroundColors[Math.floor(Math.random() * backgroundColors.length)]);   
+    $(this).css('color', colors[Math.floor(Math.random() * colors.length)]);   
 })
 
 $("a").mouseout(function() {
-    $(this).css('background-color', 'inherit')   
+    $(this).css('background-color', 'inherit');   
 })
 
 // nyt work section
 $(".list-wrapper li").mouseover(function() {
-    let id = $(this).attr("id")
-    $(this).css('color', colors[Math.floor(Math.random() * colors.length)])   
-    $(this).children().css('color', colors[Math.floor(Math.random() * colors.length)])   
+    let id = $(this).attr("id");
+    $(this).css('color', colors[Math.floor(Math.random() * colors.length)]);
+    $(this).children().css('color', colors[Math.floor(Math.random() * colors.length)]);   
 
     // associated project img
     $('.hovered-nyt .hovered').each(function() {
         let dataId = $(this).attr("data-id");
 
         if (dataId == id) {
-            $(this).addClass('active')
+            $(this).addClass('active');
 
             // check category img
             $('.default .gif-y').each(function() {
                 // console.log($(this))
                 if ($(this).hasClass('active')) {
-                    $(this).removeClass('active')
+                    $(this).removeClass('active');
                 }
             })
 
             $('.hovered-cmu .hovered').each(function() {
                 // console.log($(this))
                 if ($(this).hasClass('active')) {
-                    $(this).removeClass('active')
+                    $(this).removeClass('active');
                 }
             })
 
         } else {
-            $(this).removeClass('active')
+            $(this).removeClass('active');
         }
     })
 })
 
 $(".list-wrapper li").mouseout(function() {
-    $(this).css('color', 'inherit')
-    $(this).children('.list-item').css('color', 'inherit')   
-
+    $(this).css('color', 'inherit');
+    $(this).children('.list-item').css('color', 'inherit');   
 })
 
 // nyt + work work section
 $(".projects a").mouseover(function() {
-    let id = $(this).attr("id")
-    $(this).css('color', colors[Math.floor(Math.random() * colors.length)])   
+    let id = $(this).attr("id");
+    $(this).css('color', colors[Math.floor(Math.random() * colors.length)]);
     // $(this).children().css('color', colors[Math.floor(Math.random() * colors.length)])   
 
     // associated project img
     $('.hovered-cmu .hovered').each(function() {
         let dataId = $(this).attr("data-id");
         if (dataId == id) {
-            $(this).addClass('active')
+            $(this).addClass('active');
 
             // check category img
             $('.default .gif-y').each(function() {
                 // console.log($(this))
                 if ($(this).hasClass('active')) {
-                    $(this).removeClass('active')
+                    $(this).removeClass('active');
                 }
             })
             $('.hovered-nyt .hovered').each(function() {
                 // console.log($(this))
                 if ($(this).hasClass('active')) {
-                    $(this).removeClass('active')
+                    $(this).removeClass('active');
                 }
             })
 
         } else {
-            $(this).removeClass('active')
+            $(this).removeClass('active');
         }
     })
 })
 
 // secret bug
 $("#secret-bug").mouseover(function() {
-    $(this).css('color', colors[Math.floor(Math.random() * colors.length)])   
+    $(this).css('color', colors[Math.floor(Math.random() * colors.length)]);
 })
 
 $("#secret-bug").mouseenter(function() {
-    $('.hovered-extra img.hovered').addClass('active')
+    $('.hovered-extra img.hovered').addClass('active');
 })
 
 $("#secret-bug").mouseout(function() {
-    $('.hovered-extra img.hovered').removeClass('active')
-    $(this).css('color', 'inherit')
+    $('.hovered-extra img.hovered').removeClass('active');
+    $(this).css('color', 'inherit');
 })
 
 // not responsive.. TODO fix
