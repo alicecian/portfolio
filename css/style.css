@@ -2,46 +2,17 @@
 
 /* CUSTOM CSS */
 
-/* FOR TESTING ONLY */
-@font-face {
-	font-family: "BradfordLLWebTrial-Regular";
-	src: url("BradfordLLWebTrial-Regular.woff") format("woff");
-}
-@font-face {
-	font-family: 'cardinalfruit-regular';
-		src: 
-			url('cardinalfruitweb-regular-TRIAL.eot?#iefix') format('embedded-opentype'),
-			url('cardinalfruitweb-regular-TRIAL.woff') format('woff');
-	}
-@font-face {
-	font-family: 'cardinalfruit-italic';
-		src: 
-			url('cardinalfruitweb-italic-TRIAL.eot?#iefix') format('embedded-opentype'),
-			url('cardinalfruitweb-italic-TRIAL.woff') format('woff');
-	}
-@font-face {
-	font-family: 'cardinalfruit-mediun';
-		src: 
-			url('cardinalfruitweb-medium-TRIAL.eot?#iefix') format('embedded-opentype'),
-			url('cardinalfruitweb-medium-TRIAL.woff') format('woff');
-	}
-
-
 * {
-	/* font-family: "BradfordLLWebTrial-Regular"; */
-	/* font-family: 'cardinalfruit-regular'; */
-
 	font-family: 'Times New Roman', Times, serif;
-
 	box-sizing: border-box;
 	--text-color: rgb(1, 40, 4);
 	--section-text-color: rgb(111 129 113); ;
-
-	--link-text-color: darkgreen;
-	--background-color: rgb(186, 240, 80);
-	--li-hover-color: rgba(186, 240, 80, 0.25);
+	--background-color: rgb(229, 244, 201);
 	--max-width: 100%;
-	--highlight-color: var(--text-color);
+}
+
+::selection {
+	background: var(--background-color);
 }
 
 html {
@@ -76,24 +47,15 @@ body {
 
 img {
 	position: absolute;
-	/* height: 250px;
-	width: auto; */
-	
+	pointer-events: none;
 	width: 70%;
 	height: auto;
-	/* border: 1px solid greenyellow; */
-	
-
-	/* width: 275px; */
-	/* height: auto; */
 }
 
 @media (min-width: 451px) {
 	img {
 		width: 250px;
 	}
-
-
 }
 
 .hovered {
@@ -113,7 +75,6 @@ img {
 	margin: 0;
 }
 
-
 header {
 	margin-top: 40vh;	
 	margin-bottom: 3.5rem;
@@ -126,7 +87,6 @@ section {
 
 footer {
 	margin-top: 2rem;
-	/* margin-bottom: 275px; */
 }
 
 footer aside {
@@ -135,7 +95,7 @@ footer aside {
 
 h1, h2, h3,
 p, a, button, li, span {
-	font-size: 1.25rem;
+	font-size: 1.15rem;
 	line-height: 125%;
 	font-weight: normal;
 	color: var(--text-color);
@@ -145,6 +105,7 @@ aside {
 	color: var(--text-color);
 	padding-top: 10px;
 }
+
 aside a {
 	font-size: inherit;
 }
@@ -156,9 +117,7 @@ hr {
 
 p {margin-top: 0.5rem;}
 
-
 a {
-	/* text-decoration: 1px dotted underline; */
 	text-decoration-style: dotted;
 	text-decoration-line: underline;
 	text-decoration-color: var(--text-color);
@@ -172,6 +131,7 @@ ul.list-wrapper {
 li {
 	list-style-type: none;
 	margin-bottom: 0.75rem;
+	pointer-events: auto;
 }
 
 li:last-of-type {
@@ -183,22 +143,18 @@ ul {
 }
 
 .highlights.active {
-	color: var(--highlight-color);
+	color: var(--text-color);
 }
 
 .list-item {
-	/* font-style: italic; */
 	text-decoration-style: dotted;
 	text-decoration-line: underline;
 	text-decoration-color: var(--text-color);
 	text-decoration-thickness: 1px;
-	/* text-decoration: 1px dotted underline; */
 	text-align: left;
-	/* color: var(--section-text-color); */
 }
 
-
-/* m desktop */
+/* -------------- m desktop -------------- */
 @media (min-width: 701px) {
 	html {
 		--max-width: 85%;
@@ -221,7 +177,6 @@ ul {
 
 	.main-column {
 		width: 75%;
-		/* background-color: yellow;	 */
 	}
 
 	.side-column {
@@ -231,7 +186,6 @@ ul {
 	/* has class desktop */
 	.side-column.left {
 		width: 25%;
-		/* background-color: violet; */
 		margin-right: 1.5rem;
 		display: block;
 		max-height: 100%;
@@ -240,7 +194,6 @@ ul {
 		top: 50%;
     	transform: translateY(-50%);
 		margin-top: 0px;
-
 	}
 
 	.starry {
@@ -257,14 +210,11 @@ ul {
 		background-color: var(--background-color);
 	}
 
-	.list-wrapper li:hover {
+	/* .list-wrapper li:hover {
 		cursor: pointer;
-	}
-
-	
+	} */
 
 	figure {
-		/* border: 1px solid salmon; */
 		display: flex;
 		flex-direction: column;
     	align-content: center;
@@ -273,15 +223,9 @@ ul {
 
 	img {
 		position: relative;
-		/* position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%); */
 		pointer-events: none;
-		/* max-width: 90%; */
 		max-width: 100%;
 		width: auto;
-		/* max-height: 600px; */
 		max-height: 525px;
 		height: auto;
 	}
@@ -308,8 +252,6 @@ ul {
 	    width: 200px;
 	}
 
-	
-
 	img[data-id="secret-bug"] {
 		position: absolute;
 		bottom: -30px;
@@ -320,10 +262,10 @@ ul {
 
 }
 
-/* lg desktop */
+/* -------------- lg desktop -------------- */
 @media (min-width: 1024px) {
 	.main-column {
-		width: 460px;
+		width: 420px;
 	}
 
 	/* has class desktop */
@@ -342,6 +284,5 @@ ul {
 		position: sticky;
 		top: 50%;
     	transform: translateY(-50%);
-		/* background-color: aqua; */
 	}
 }
