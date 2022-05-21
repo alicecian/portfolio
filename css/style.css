@@ -132,6 +132,8 @@ li {
 	list-style-type: none;
 	margin-bottom: 0.75rem;
 	pointer-events: auto;
+	text-indent: -22px;
+	padding-left: 22px;
 }
 
 li:last-of-type {
