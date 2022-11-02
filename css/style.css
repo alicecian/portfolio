@@ -237,7 +237,7 @@ ul {
 		position: relative;
 		color: var(--text-color);
 		font-size: 15px;
-		padding: 0px 4rem 0px 4rem;
+		padding: 0px 2rem 0px 2rem;
 	}
 
 	.hovered.active {
