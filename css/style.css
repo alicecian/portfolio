@@ -164,6 +164,26 @@ ul {
 	text-decoration-thickness: 1px; */
 	text-align: left;
 }
+@media (max-width: 525px) {
+	img.sun-loop.mobile {
+		display: block;
+		width: 200px;
+		height: auto;
+	}
+	img.sun-loop.desktop {
+		display: none;
+	}
+}
+@media (min-width: 526px) {
+	img.sun-loop.mobile {
+		display: none;
+	}
+	img.sun-loop.desktop {
+		display: block;
+		width: 30%;
+	}
+}
+
 
 /* -------------- m desktop -------------- */
 @media (min-width: 701px) {
@@ -239,6 +259,11 @@ ul {
 		width: auto;
 		max-height: 525px;
 		height: auto;
+	}
+
+	img.sun-loop.desktop {
+		display: block;
+		width: 70%;
 	}
 
 	figcaption {
