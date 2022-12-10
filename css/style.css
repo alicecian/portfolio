@@ -164,7 +164,15 @@ ul {
 	text-decoration-thickness: 1px; */
 	text-align: left;
 }
+
+/* ------------- gif --------------- */
 @media (max-width: 525px) {
+	.gif-y[data-id="work-nyt"] img.desktop{
+		display: none;
+	}
+	.gif-y[data-id="work-nyt"] img.mobile{
+		display: block;
+	}
 	img.sun-loop.mobile {
 		display: block;
 		width: 200px;
@@ -174,7 +182,14 @@ ul {
 		display: none;
 	}
 }
+
 @media (min-width: 526px) {
+	.gif-y[data-id="work-nyt"] img.desktop{
+		display: block;
+	}
+	.gif-y[data-id="work-nyt"] img.mobile{
+		display: none;
+	}
 	img.sun-loop.mobile {
 		display: none;
 	}
