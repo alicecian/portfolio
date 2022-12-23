@@ -105,6 +105,11 @@ p, a, button, li, span {
 	color: var(--text-color);
 }
 
+.starry {
+	/* match the <hr> rule */
+	opacity: 0.25;
+}
+
 aside { 
 	color: var(--text-color);
 	padding-top: 10px;
@@ -245,8 +250,6 @@ ul {
 	.starry {
 		display: flex;
 		flex-direction: column;
-		/* match the <hr> rule */
-		opacity: 0.25;
 	}
 
 	/* has class desktop */
