@@ -1,4 +1,3 @@
-// var colors = ['cornflowerblue', 'forestgreen', 'orangered', 'rebeccapurple', 'violet'];
 let colors = ['olivedrab', 'orangered', 'cornflowerblue', 'purple', 'orange'];
 let backgroundColors = ['lavender', 'palegoldenrod', 'mistyrose', 'lightcyan', 'greenyellow'];
 

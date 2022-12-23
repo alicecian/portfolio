@@ -245,6 +245,8 @@ ul {
 	.starry {
 		display: flex;
 		flex-direction: column;
+		/* match the <hr> rule */
+		opacity: 0.25;
 	}
 
 	/* has class desktop */
