@@ -1,5 +1,5 @@
 let colors = ['olivedrab', 'orangered', 'cornflowerblue', 'purple', 'orange'];
-let backgroundColors = ['lavender', 'palegoldenrod', 'mistyrose', 'lightcyan', 'greenyellow'];
+let backgroundColors = ['lavender', 'palegoldenrod', 'mistyrose', 'lemonchiffon', 'lightgreen', 'thistle', 'powderblue'];
 
 const sectionEls = [...document.querySelectorAll('.section')];
 const gifs = [...document.querySelectorAll('.gif-y')];
