@@ -160,6 +160,11 @@ ul {
 	font-size: 12px;
 }
 
+.description {
+	font-size: 12px;
+	line-height: 1;
+}
+
 .list-item {
 	text-align: left;
 }
