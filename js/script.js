@@ -4,9 +4,11 @@ let backgroundColors = ['lavender', 'palegoldenrod', 'mistyrose', 'lemonchiffon'
 const sectionEls = [...document.querySelectorAll('.section')];
 const gifs = [...document.querySelectorAll('.gif-y')];
 const highlights = [...document.querySelectorAll('.highlights')];
-const nytLis = [...document.querySelectorAll('.list-wrapper li')];
+// const nytLis = [...document.querySelectorAll('.list-wrapper li')];
 const nythovers = [...document.querySelectorAll('.hovered-nyt .hovered')];
 const cmuhovers = [...document.querySelectorAll('.hovered-cmu .hovered')];
+const endhovers = [...document.querySelectorAll('.hovered-end .hovered')];
+
 
 // very inefficiently written jquery :-)
 $("a").mouseenter(function() {
@@ -17,6 +19,7 @@ $("a").mouseenter(function() {
 $("a").mouseout(function() {
     $(this).css('background-color', 'inherit');   
 })
+
 
 // nyt work section
 $(".list-wrapper li").mouseover(function() {
@@ -45,6 +48,12 @@ $(".list-wrapper li").mouseover(function() {
                     $(this).removeClass('active');
                 }
             })
+            $('.hovered-end .hovered').each(function() {
+                // console.log($(this))
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                }
+            })
 
         } else {
             $(this).removeClass('active');
@@ -57,7 +66,7 @@ $(".list-wrapper li").mouseout(function() {
     $(this).children('.list-item').css('color', 'inherit');   
 })
 
-// nyt + work work section
+// cmu work section
 $(".projects a").mouseover(function() {
     let id = $(this).attr("id");
     $(this).css('color', colors[Math.floor(Math.random() * colors.length)]);
@@ -82,6 +91,50 @@ $(".projects a").mouseover(function() {
                     $(this).removeClass('active');
                 }
             })
+            $('.hovered-end .hovered').each(function() {
+                // console.log($(this))
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                }
+            })
+
+        } else {
+            $(this).removeClass('active');
+        }
+    })
+})
+
+// other work section
+$("#footnotes .projects a").mouseover(function() {
+    let id = $(this).attr("id");
+    $(this).css('color', colors[Math.floor(Math.random() * colors.length)]);
+    // $(this).children().css('color', colors[Math.floor(Math.random() * colors.length)])   
+
+    // associated project img
+    $('.hovered-end .hovered').each(function() {
+        let dataId = $(this).attr("data-id");
+        if (dataId == id) {
+            $(this).addClass('active');
+
+            // check category img
+            $('.default .gif-y').each(function() {
+                // console.log($(this))
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                }
+            })
+            $('.hovered-nyt .hovered').each(function() {
+                // console.log($(this))
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                }
+            })
+            $('.hovered-cmu .hovered').each(function() {
+                // console.log($(this))
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                }
+            })
 
         } else {
             $(this).removeClass('active');
@@ -95,36 +148,40 @@ $("#secret-bug").mouseover(function() {
 })
 
 $("#secret-bug").mouseenter(function() {
-    $('.hovered-extra img.hovered').addClass('active');
+    $('.hovered-extra img.hovered.bug').addClass('active');
 })
 
 $("#secret-bug").mouseout(function() {
-    $('.hovered-extra img.hovered').removeClass('active');
+    $('.hovered-extra img.hovered.bug').removeClass('active');
     $(this).css('color', 'inherit');
 })
 
+
+// secret dog
+$("#peaches").mouseover(function() {
+    $(this).css('color', colors[Math.floor(Math.random() * colors.length)]);
+})
+
+$("#peaches").mouseenter(function() {
+    $('.hovered-extra img.hovered.dog').addClass('active');
+})
+
+$("#peaches").mouseout(function() {
+    $('.hovered-extra img.hovered.dog').removeClass('active');
+    $(this).css('color', 'inherit');
+})
+
+
 // not responsive.. TODO fix
 const isMobile = window.matchMedia("only screen and (max-width: 450px)").matches;
-const bodyyy = document.querySelector('body');
-
-// let vwidth = window.innerWidth;
-// console.log('vwidth =', vwidth)
+const mainBody = document.querySelector('body');
 
 if (isMobile) {
-    bodyyy.classList.remove('desktop')
-    // console.log('hi mobile', bodyyy);
+    mainBody.classList.remove('desktop');
 } else {
-    // console.log('hi desktop', bodyyy)
-    bodyyy.classList.add('desktop')
+    mainBody.classList.add('desktop');
 }
 
-// var width = $(window).width();
-// $(window).resize(function () {
-//     if (width <= 700) {
-//         $(sideColumnR).removeClass('desktop');
-//         console.log('yo mobile')
-//     }
-// });
 
 // match gifs to section
 function Match(section, array) {
@@ -178,29 +235,70 @@ function clear(array) {
     }
 }
 
-let callback = (entries, observer) => {
+// TO DO: write a hover match function that runs when section is active (see IO below)
+// this doesn't work yet
+function hoverMatch(activeSection) {
+    // console.log(activeSection);
+    const children = activeSection.children;
+    for (c of children) { 
 
+    // only need the child that is ul.projects
+      if (c.classList.contains('projects')) {
+    //     console.log(c);
+
+        const lis = c.children;
+        // li in ul
+        for (li of lis) {
+
+            const el = li.children;
+            // span, a, etc in li
+            for (a of el) {
+
+                // only pull <a> 
+                if (a.nodeName == "A") {
+                    // console.log(a)
+
+                    a.addEventListener(
+                        "mouseenter",
+                        (event) => {
+                            // console.log("hovered over", a);
+                          // highlight the mouseenter target
+                        //   event.target.style.color = "purple";
+                        },
+                        false
+                    );
+                }
+            }
+        }
+      }
+    }
+    // console.log(projectURLs);
+}
+
+let callback = (entries, observer) => {
     entries.forEach(entry => {
-            
         if (entry.isIntersecting) {
+            // console.log(entry.target)
             entry.target.classList.add("active");
-            Highlight(entry.target)
-            Match(entry.target, gifs)
-            clear(nythovers)
+            // hoverMatch(entry.target);
+            Highlight(entry.target);
+            Match(entry.target, gifs);
+            clear(nythovers);
 
         } else {
             entry.target.classList.remove("active");
 
-            let id = entry.target.id
+            let id = entry.target.id;
             if (id !== 'work-nyt') {
-                // console.log('i am nyt')
                 // if entry == nyt remove active class from pic .hovered
                 Array.prototype.forEach.call(cmuhovers, (el) => {
                     el.classList.remove('active')
                 })
-            }
+                Array.prototype.forEach.call(endhovers, (el) => {
+                    el.classList.remove('active')
+                })
+            } 
         }
-        
     })
 }
 
@@ -216,5 +314,3 @@ const observer = new IntersectionObserver(callback, options);
 Array.prototype.forEach.call(sectionEls, (el) => {
     observer.observe(el);
 });
-
-
