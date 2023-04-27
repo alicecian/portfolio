@@ -210,7 +210,6 @@ ul {
 		--max-width: 85%;
 		max-width: var(--max-width);
 		margin-bottom: 0;
-		padding: 0;
 	}
 
 	body.desktop {
