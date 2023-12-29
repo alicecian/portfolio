@@ -279,6 +279,7 @@ let callback = (entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             // console.log(entry.target)
+            console.log('intersecting', entry.target);
             entry.target.classList.add("active");
             // hoverMatch(entry.target);
             Highlight(entry.target);
@@ -305,8 +306,8 @@ let callback = (entries, observer) => {
 //need to tweak
 const options = {
     root: null,
-    rootMargin: '-10% 0px 10% 0px',
-    threshold: 0.8
+    rootMargin: '-55% 0px -30% 0px'
+    // threshold: 0.9
 };
 
 const observer = new IntersectionObserver(callback, options);
