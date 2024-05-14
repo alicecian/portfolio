@@ -1,3 +1,4 @@
+// one day, I will update all of this code...
 let colors = ['olivedrab', 'orangered', 'cornflowerblue', 'purple', 'orange'];
 let backgroundColors = ['lavender', 'palegoldenrod', 'mistyrose', 'lemonchiffon', 'lightgreen', 'thistle', 'powderblue'];
 
@@ -115,6 +116,7 @@ $("#footnotes .projects a").mouseover(function() {
         let dataId = $(this).attr("data-id");
         if (dataId == id) {
             $(this).addClass('active');
+            // console.log($(this))
 
             // check category img
             $('.default .gif-y').each(function() {
@@ -237,51 +239,48 @@ function clear(array) {
 
 // TO DO: write a hover match function that runs when section is active (see IO below)
 // this doesn't work yet
-function hoverMatch(activeSection) {
-    // console.log(activeSection);
-    const children = activeSection.children;
-    for (c of children) { 
+// function hoverMatch(activeSection) {
+//     // console.log(activeSection);
+//     const children = activeSection.children;
+//     for (c of children) { 
 
-    // only need the child that is ul.projects
-      if (c.classList.contains('projects')) {
-    //     console.log(c);
+//     // only need the child that is ul.projects
+//         if (c.classList.contains('projects')) {
+//     //     console.log(c);
 
-        const lis = c.children;
-        // li in ul
-        for (li of lis) {
+//             const lis = c.children;
+//             // li in ul
+//             for (li of lis) {
 
-            const el = li.children;
-            // span, a, etc in li
-            for (a of el) {
+//                 const el = li.children;
+//                 // span, a, etc in li
+//                 for (a of el) {
 
-                // only pull <a> 
-                if (a.nodeName == "A") {
-                    // console.log(a)
+//                     // only pull <a> 
+//                     if (a.nodeName == "A") {
+//                         // console.log(a)
 
-                    a.addEventListener(
-                        "mouseenter",
-                        (event) => {
-                            // console.log("hovered over", a);
-                          // highlight the mouseenter target
-                        //   event.target.style.color = "purple";
-                        },
-                        false
-                    );
-                }
-            }
-        }
-      }
-    }
-    // console.log(projectURLs);
-}
+//                         a.addEventListener(
+//                             "mouseenter",
+//                             (event) => {
+//                                 // console.log("hovered over", a);
+//                             // highlight the mouseenter target
+//                             //   event.target.style.color = "purple";
+//                             },
+//                             false
+//                         );
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 
 let callback = (entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            // console.log(entry.target)
-            console.log('intersecting', entry.target);
+            // console.log('intersecting', entry.target);
             entry.target.classList.add("active");
-            // hoverMatch(entry.target);
             Highlight(entry.target);
             Match(entry.target, gifs);
             clear(nythovers);
