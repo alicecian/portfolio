@@ -67,6 +67,10 @@ img {
 	opacity: 0;
 }
 
+.plant-modal {
+	display: none;
+}
+
 .gif-y {
 	display: none;
 	opacity: 0;
@@ -97,7 +101,7 @@ footer aside {
 	margin-top: 8px;
 }
 
-h1, h2, h3,
+h1, h2, h3, h4,
 p, a, button, li, span {
 	font-size: 1.15rem;
 	line-height: 125%;
@@ -309,6 +313,35 @@ ul {
 	.hovered-extra {
 		position: absolute;
 	    width: 200px;
+	}
+
+	.plant-trigger {
+		position: relative;
+	}
+
+	.plant-modal {
+		display: none;
+		position: absolute;
+		left: 40px;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 10;
+		padding: 10px;
+		pointer-events: none;
+	}
+
+	.plant-modal.active {
+		display: block;
+	}
+
+	.plant-modal img {
+		position: static;
+		display: block;
+		width: 500px;
+		height: auto;
+		max-width: none;
+		max-height: none;
+		pointer-events: none;
 	}
 
 	img[data-id="secret-bug"] {

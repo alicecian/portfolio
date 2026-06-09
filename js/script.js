@@ -75,6 +75,20 @@ function bindSecretHover(triggerId, imageSelector) {
 bindSecretHover('secret-bug', '.hovered-extra img.hovered.bug');
 bindSecretHover('peaches', '.hovered-extra img.hovered.dog');
 
+const plantsLink = document.getElementById('plants');
+const plantModal = document.querySelector('.plant-modal');
+
+if (plantsLink && plantModal) {
+    plantsLink.addEventListener('mouseenter', () => {
+        plantModal.classList.add('active');
+        plantModal.setAttribute('aria-hidden', 'false');
+    });
+    plantsLink.addEventListener('mouseleave', () => {
+        plantModal.classList.remove('active');
+        plantModal.setAttribute('aria-hidden', 'true');
+    });
+}
+
 // match highlight to section
 function Highlight(section) {
     let index;
